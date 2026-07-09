@@ -360,9 +360,10 @@
 
 	function drawTouchZones(W: number, H: number) {
 		const a = 0.09;
-		if (keys.has('ArrowLeft'))  renderer!.fillRect(0,          0,      W * ZX,        H,      GREEN, a);
-		if (keys.has('ArrowRight')) renderer!.fillRect(W*(1 - ZX), 0,      W,             H,      GREEN, a);
-		if (keys.has('ArrowUp'))    renderer!.fillRect(W * ZX,     H * ZY, W * (1 - ZX), H,      GREEN, a);
+		const touched = new Set(touchKeys.values());
+		if (touched.has('ArrowLeft'))  renderer!.fillRect(0,          0,      W * ZX,        H,      GREEN, a);
+		if (touched.has('ArrowRight')) renderer!.fillRect(W*(1 - ZX), 0,      W,             H,      GREEN, a);
+		if (touched.has('ArrowUp'))    renderer!.fillRect(W * ZX,     H * ZY, W * (1 - ZX), H,      GREEN, a);
 	}
 
 	// ── game loop ─────────────────────────────────────────────────────────────────
