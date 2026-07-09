@@ -15,11 +15,18 @@ Controls: `←` `→` to rotate, `↑` to thrust. `R` to reset. Touch-friendly.
 
 ## Setup
 
-These are SvelteKit route files. Drop them into `src/routes/` of any SvelteKit project and run the dev server.
+### Standalone
 
 ```bash
+npm install
 npm run dev
 ```
+
+`src/routes/` contains symlinks to the root files so this repo is runnable on its own.
+
+### As a submodule
+
+Drop (or mount as a git submodule) into `src/routes/` of any SvelteKit project. The route files at the repo root are picked up directly.
 
 ## How it works
 
