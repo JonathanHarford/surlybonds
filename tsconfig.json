@@ -1,14 +1,16 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
+		"moduleResolution": "bundler",
+		"module": "esnext",
+		"target": "esnext",
+		"lib": ["esnext", "DOM", "DOM.Iterable"],
+		"verbatimModuleSyntax": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"strict": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
+		"resolveJsonModule": true
 	},
 	"include": [
 		"ambient.d.ts",
@@ -16,7 +18,6 @@
 		"*.svelte",
 		"src/**/*.js",
 		"src/**/*.ts",
-		"src/**/*.svelte",
-		"vite.config.ts"
+		"src/**/*.svelte"
 	]
 }
