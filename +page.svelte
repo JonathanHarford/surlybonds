@@ -1,8 +1,8 @@
+<svelte:options customElement={{ tag: 'surly-bonds-app', shadow: 'none' }} />
+
 <script lang="ts">
 	import { BloomRenderer, type RGB } from './gl-bloom';
 	import { measureText, textLines, textPoints, CELL_H, CELL_W } from './gl-font';
-	import screenshotUrl from './surlybonds-screenshot.webp';
-	import iconUrl from './surlybonds.webp';
 
 	// ── constants ────────────────────────────────────────────────────────────────
 	const GM = 900_000;
@@ -547,35 +547,12 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Surly Bonds</title>
-	<meta name="description" content="A browser toy to illustrate my favorite Fun Fact: it takes more energy to fall into the sun than it does to leave the solar system." />
-
-	<link rel="icon" type="image/webp" href={iconUrl} />
-
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Surly Bonds" />
-	<meta property="og:description" content="A browser toy to illustrate my favorite Fun Fact: it takes more energy to fall into the sun than it does to leave the solar system." />
-	<meta property="og:image" content={screenshotUrl} />
-
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Surly Bonds" />
-	<meta name="twitter:description" content="A browser toy to illustrate my favorite Fun Fact: it takes more energy to fall into the sun than it does to leave the solar system." />
-	<meta name="twitter:image" content={screenshotUrl} />
-
-</svelte:head>
 
 <div class="screen">
 	<canvas class="layer" bind:this={glCanvas}></canvas>
 </div>
 
 <style>
-	:global(body) {
-		margin: 0;
-		overflow: hidden;
-		background: #000;
-	}
-
 	.screen {
 		position: relative;
 		width: 100vw;
